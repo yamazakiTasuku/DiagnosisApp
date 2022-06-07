@@ -38,7 +38,7 @@ const handleSubmit = (e,anserConter:anserConterType,Sabusuc:string) =>{
       </div>
       
       <div className='flex justify-center'>
-        <button className=" shadow-lg my-10 mx-10 px-10 py-1  bg-blue-400 text-lg text-white font-semibold rounded  hover:bg-blue-500 hover:shadow-sm hover:translate-y-0.5 transform transition " onClick={(e) => handleSubmit(e,anserConter,"NET")}>{anserList.Netflix}</button>
+        <button className="animate-bounce shadow-lg my-10 mx-10 px-10 py-1  bg-blue-400 text-lg text-white font-semibold rounded  hover:bg-blue-500 hover:shadow-sm hover:translate-y-0.5 transform transition " onClick={(e) => handleSubmit(e,anserConter,"NET")}>{anserList.Netflix}</button>
         <button className=" shadow-lg my-10 mx-10 px-10 py-1  bg-blue-400 text-lg text-white font-semibold rounded  hover:bg-blue-500 hover:shadow-sm hover:translate-y-0.5 transform transition " onClick={(e) => handleSubmit(e,anserConter,"UNX")}>{anserList.UNext}</button>
         <button className=" shadow-lg my-10 mx-10 px-10 py-1  bg-blue-400 text-lg text-white font-semibold rounded  hover:bg-blue-500 hover:shadow-sm hover:translate-y-0.5 transform transition " onClick={(e) => handleSubmit(e,anserConter,"DSP")}>{anserList.Disney_plus}</button>
       
