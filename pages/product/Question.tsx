@@ -13,51 +13,68 @@ const App = () => {
     type anserConterType={
         NetflixNum:number;
         UNextNum:number;
-        DisneyPlus:number;
+        DisneyPlusNum:number;
     }
 
     //答えの種類を足していく
     let anserConter:anserConterType = {
         NetflixNum : 0,
         UNextNum : 0,
-        DisneyPlus:0
+        DisneyPlusNum:0
     };
 
     //回答の種類を定義
-    const anserLists:anser[] = new Array();
-    anserLists[0] = {
+    const anserLists = [{
         Netflix: "a",
         UNext: "b",
         Disney_plus:"c",
-    }
-
-    anserLists[1] = {
+    },{
         Netflix: "d",
         UNext: "e",
         Disney_plus:"f",
-    }
-
-    anserLists[2] = {
+    },{
         Netflix: "g",
         UNext: "h",
         Disney_plus:"i",
-    }
-
+    },{
+        Netflix: "j",
+        UNext: "k",
+        Disney_plus:"l",
+    },{
+        Netflix: "m",
+        UNext: "n",
+        Disney_plus:"o",
+    },{
+        Netflix: "p",
+        UNext: "q",
+        Disney_plus:"r",
+    }]
 
     const toggleAnser = (counter) =>{
-        anserConter.NetflixNum = anserConter.NetflixNum + counter.NetflixNum 
-        console.log(anserConter.NetflixNum)
+        anserConter.NetflixNum = anserConter.NetflixNum + counter[0] 
+        anserConter.UNextNum = anserConter.UNextNum + counter[1]
+        anserConter.DisneyPlusNum = anserConter.DisneyPlusNum + counter[2]
+        console.log(anserConter)
+
+
 
     }
-
-
-
-
+    
     return(
         <div>
-            <AnserList anserList={anserLists[0]} anserConter={anserConter} toggleAnser={toggleAnser}/>
-            <AnserList anserList={anserLists[1]} anserConter={anserConter} toggleAnser={toggleAnser}/>
-            <AnserList anserList={anserLists[2]} anserConter={anserConter} toggleAnser={toggleAnser}/>
+            <div className="flex justify-center">
+                <h1>
+                    以下の中から好きな作品を選んでください
+                </h1>
+            </div>
+            {anserLists.map((anserList)=>(  
+                <AnserList anserList={anserList} anserConter={anserConter} toggleAnser={toggleAnser} key={anserList.Netflix}/>
+            ))}
+            <div className="flex justify-center my-10">
+                <button  className='mt-7 text-3xl px-20 py-10 bg-blue-400 text-white font-semibold rounded hover:bg-blue-500'>
+                次の質問へ!!
+                </button>
+            </div>
         </div>
     )
 
