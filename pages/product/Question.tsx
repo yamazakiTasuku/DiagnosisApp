@@ -44,13 +44,20 @@ const App = () => {
     }
 
 
+    const toggleAnser = (counter) =>{
+        anserConter.NetflixNum = anserConter.NetflixNum + counter.NetflixNum 
+        console.log(anserConter.NetflixNum)
+
+    }
+
+
 
 
     return(
         <div>
-            <AnserList anserList={anserLists[0]} anserConter={anserConter}/>
-            <AnserList anserList={anserLists[1]} anserConter={anserConter}/>
-            <AnserList anserList={anserLists[2]} anserConter={anserConter}/>
+            <AnserList anserList={anserLists[0]} anserConter={anserConter} toggleAnser={toggleAnser}/>
+            <AnserList anserList={anserLists[1]} anserConter={anserConter} toggleAnser={toggleAnser}/>
+            <AnserList anserList={anserLists[2]} anserConter={anserConter} toggleAnser={toggleAnser}/>
         </div>
     )
 

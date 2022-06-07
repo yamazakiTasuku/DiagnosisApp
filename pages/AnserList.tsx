@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-const AnserList = ({anserList,anserConter}) => { 
+const AnserList = ({anserList,anserConter,toggleAnser}) => { 
   type anserConterType={
     NetflixNum:number;
     UNextNum:number;
@@ -12,12 +12,12 @@ const handleSubmit = (e,anserConter:anserConterType) =>{
   
   e.preventDefault();
   let newAnserConter :anserConterType={
-    NetflixNum : anserConter.NetflixNum + 1,
-    UNextNum : anserConter.UNextNum + 1,
-    DisneyPlus:anserConter.DisneyPlus + 1,
+    NetflixNum : 1,
+    UNextNum :1,
+    DisneyPlus: 1,
   }
-  setAnsers([newAnserConter,...anserConter]);
-  console.log(newAnserConter)
+  toggleAnser(newAnserConter)
+  return newAnserConter
 
 }
 
