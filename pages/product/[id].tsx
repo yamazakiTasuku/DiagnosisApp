@@ -1,8 +1,17 @@
 import { useState } from "react";
 import AnserList from "../AnserList"
+import Link from 'next/link'
 import {useRouter} from "next/router"
+import  {anserLists} from "./questionItem"
 
 const App = () => {
+    let UrlNum = 0
+    let url,urlStr:string
+    const router = useRouter();
+    let {id} = router.query;
+    urlStr = `${id}`
+    UrlNum = Number(urlStr.slice(-1)) + 1
+
     const [ansers,setAnsers] = useState();
 
     type anser = {
@@ -24,42 +33,16 @@ const App = () => {
     };
 
     //回答の種類を定義
-    const anserLists = [{
-        Netflix: "a",
-        UNext: "b",
-        Disney_plus:"c",
-    },{
-        Netflix: "d",
-        UNext: "e",
-        Disney_plus:"f",
-    },{
-        Netflix: "g",
-        UNext: "h",
-        Disney_plus:"i",
-    },{
-        Netflix: "j",
-        UNext: "k",
-        Disney_plus:"l",
-    },{
-        Netflix: "m",
-        UNext: "n",
-        Disney_plus:"o",
-    },{
-        Netflix: "p",
-        UNext: "q",
-        Disney_plus:"r",
-    }]
+    
 
     const toggleAnser = (counter) =>{
         anserConter.NetflixNum = anserConter.NetflixNum + counter[0] 
         anserConter.UNextNum = anserConter.UNextNum + counter[1]
         anserConter.DisneyPlusNum = anserConter.DisneyPlusNum + counter[2]
         console.log(anserConter)
-
-
-
     }
     
+    url = "/product/Question"  + String(UrlNum)
     return(
         <div>
             <div className="flex justify-center">
@@ -71,9 +54,11 @@ const App = () => {
                 <AnserList anserList={anserList} anserConter={anserConter} toggleAnser={toggleAnser} key={anserList.Netflix}/>
             ))}
             <div className="flex justify-center my-10">
-                <button  className='mt-7 text-3xl px-20 py-10 bg-blue-400 text-white font-semibold rounded hover:bg-blue-500'>
-                次の質問へ!!
-                </button>
+                <Link href={url}>
+                    <button  className='mt-7 text-3xl px-20 py-10 bg-blue-400 text-white font-semibold rounded hover:bg-blue-500'>
+                    次の質問へ!!
+                    </button>
+                </Link>
             </div>
         </div>
     )

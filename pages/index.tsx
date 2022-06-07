@@ -12,7 +12,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className='text-center'>
-        <Link href="/product/Question">
+        <Link href="/product/Question1">
           <button  className='mt-7 text-3xl px-20 py-10 bg-blue-400 text-white font-semibold rounded hover:bg-blue-500'>
             Start! <br/>
             今すぐ無料診断
