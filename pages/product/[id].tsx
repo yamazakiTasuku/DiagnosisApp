@@ -2,7 +2,7 @@ import { useState } from "react";
 import AnserList from "../AnserList"
 import Link from 'next/link'
 import {useRouter} from "next/router"
-import  {anserLists} from "./questionItem"
+import  {QuestionItemGive} from "./questionItem"
 
 const App = () => {
     let UrlNum = 0
@@ -11,6 +11,9 @@ const App = () => {
     let {id} = router.query;
     urlStr = `${id}`
     UrlNum = Number(urlStr.slice(-1)) + 1
+    let anserLists = QuestionItemGive(Number(urlStr.slice(-1)))
+
+    
 
     const [ansers,setAnsers] = useState();
 
