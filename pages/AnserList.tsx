@@ -28,8 +28,6 @@ const handleSubmit = (e,anserConter:anserConterType,Sabusuc:string) =>{
   return newAnserConter
 
 }
-
-
   return (
     <div>
       <div className='flex justify-center'>
