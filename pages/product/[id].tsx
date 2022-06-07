@@ -12,16 +12,8 @@ const App = () => {
     urlStr = `${id}`
     UrlNum = Number(urlStr.slice(-1)) + 1
     let anserLists = QuestionItemGive(Number(urlStr.slice(-1)))
-
     
-
     const [ansers,setAnsers] = useState();
-
-    type anser = {
-        Netflix: string;
-        UNext: string;
-        Disney_plus:string;
-    }
     type anserConterType={
         NetflixNum:number;
         UNextNum:number;
